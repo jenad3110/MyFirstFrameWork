@@ -21,11 +21,14 @@ public class CommonAPI extends Utility {
         return driver;
     }
 
-    //@Parameters({"url"})
+
+    @Parameters({"browser"})
     @BeforeMethod
-    public void SetUp()  {
+    public void SetUp(String browser)  {
+        if(browser.equalsIgnoreCase("chrome")) {
         WebDriverManager.chromedriver().setup();
-        driver =new ChromeDriver();
+        driver =new ChromeDriver();}
+
         driver.get(Url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(duration)));
         if (maximizeBrowser.equalsIgnoreCase("true")){
