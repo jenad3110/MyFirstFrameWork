@@ -1,6 +1,8 @@
-package TestNG.AnnotationInTestNG;
+package OtherTests.TestNG.IncludeExclude;
 
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 public class LoginPage {
 
@@ -27,23 +29,18 @@ public class LoginPage {
 
 
 
+    @BeforeSuite
 
+    public void BeforeSuite(){
 
-    @BeforeTest
-    public void Beforetest(){
-
-        System.out.println("I execute before test "+
-                "---------------");
-
+        System.out.println("I execute before suite");
 
     }
 
-    @AfterTest
-    public void Aftertest(){
+    @AfterSuite
+    public void AfterSuite(){
 
-        System.out.println("I execute after test "+
-                "---------------");
-
+        System.out.println("I execute after suite");
 
     }
 

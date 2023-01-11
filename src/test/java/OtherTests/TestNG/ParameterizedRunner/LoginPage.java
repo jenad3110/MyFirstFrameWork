@@ -1,4 +1,4 @@
-package TestNG.IncludeExclude;
+package OtherTests.TestNG.ParameterizedRunner;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;

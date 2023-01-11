@@ -8,7 +8,7 @@
         <parameter name="password" value="pass"></parameter>
         <classes>
 
-            <class name="TestNG.ParameterizedRunner.HomePage"/>
+            <class name="OtherTests.TestNG.ParameterizedRunner.HomePage"/>
 
 
         </classes>

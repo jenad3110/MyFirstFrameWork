@@ -1,4 +1,4 @@
-package TestNG.AnnotationInTestNG;
+package OtherTests.TestNG.AnnotationInTestNG;
 
 import org.testng.annotations.*;
 

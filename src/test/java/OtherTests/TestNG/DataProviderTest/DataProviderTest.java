@@ -1,4 +1,4 @@
-package TestNG.DataProviderTest;
+package OtherTests.TestNG.DataProviderTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

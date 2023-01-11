@@ -1,4 +1,4 @@
-package HP;
+package OtherTests.HP;
 
 import Base.CommonAPI;
 import org.openqa.selenium.By;

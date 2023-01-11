@@ -1,4 +1,4 @@
-package TestNG.GroupsInTestNG;
+package OtherTests.TestNG.GroupsInTestNG;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;

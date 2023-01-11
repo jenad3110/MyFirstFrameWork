@@ -1,4 +1,4 @@
-package TestNG.ParameterizedRunner;
+package OtherTests.TestNG.ParameterizedRunner;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.checkerframework.checker.units.qual.C;

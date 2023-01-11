@@ -1,4 +1,4 @@
-package TestNG.GroupsInTestNG;
+package OtherTests.TestNG.IncludeExclude;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -6,21 +6,22 @@ import org.testng.annotations.Test;
 
 public class HomePage {
 
-    @Test(groups ={"e2e","regression"})
+    @Test
     public void ClickOnMenu(){
 
         System.out.println("I clicked on menu");
 
     }
 
-
-    @Test(groups ={"e2e","regression"})
+    @Test
     public void ClickOnChatLogo(){
 
         System.out.println("I clicked on chat");
 
     }
-    @Test(groups ={"sanity","e2e","regression"})
+
+
+    @Test
     public void ClickOnAddNewStory(){
 
         System.out.println("I clicked on add new story");

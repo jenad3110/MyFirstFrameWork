@@ -1,8 +1,6 @@
-package TestNG.ParameterizedRunner;
+package OtherTests.TestNG.AnnotationInTestNG;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class LoginPage {
 
@@ -29,18 +27,23 @@ public class LoginPage {
 
 
 
-    @BeforeSuite
 
-    public void BeforeSuite(){
 
-        System.out.println("I execute before suite");
+    @BeforeTest
+    public void Beforetest(){
+
+        System.out.println("I execute before test "+
+                "---------------");
+
 
     }
 
-    @AfterSuite
-    public void AfterSuite(){
+    @AfterTest
+    public void Aftertest(){
 
-        System.out.println("I execute after suite");
+        System.out.println("I execute after test "+
+                "---------------");
+
 
     }
 

@@ -1,4 +1,4 @@
-package test;
+package OtherTests.test;
 
 
 public class FirstTest {

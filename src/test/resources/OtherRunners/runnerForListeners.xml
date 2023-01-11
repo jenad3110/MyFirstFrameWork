@@ -6,14 +6,14 @@
 </listeners>
     <test name="regression Test" >
         <classes>
-            <class name="TestNG.AnnotationInTestNG.HomePage" />
+            <class name="OtherTests.TestNG.AnnotationInTestNG.HomePage" />
         </classes>
     </test>
 
 
     <test name="sanity Test" >
         <classes>
-            <class name="TestNG.AnnotationInTestNG.LoginPage" />
+            <class name="OtherTests.TestNG.AnnotationInTestNG.LoginPage" />
         </classes>
     </test>
 </suite>

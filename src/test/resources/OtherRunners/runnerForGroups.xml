@@ -7,10 +7,10 @@
         </run>
     </groups>
     <classes>
-        <class name="TestNG.GroupsInTestNG.HomePage" >
+        <class name="OtherTests.TestNG.GroupsInTestNG.HomePage" >
 
         </class>
-        <class name="TestNG.GroupsInTestNG.LoginPage" />
+        <class name="OtherTests.TestNG.GroupsInTestNG.LoginPage" />
     </classes>
 </test>
 
