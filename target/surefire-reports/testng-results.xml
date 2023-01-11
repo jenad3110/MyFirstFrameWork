@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-09T19:55:23 EST" name="Suite1" finished-at="2023-01-09T19:55:28 EST" duration-ms="4333">
+    <groups>
+    </groups>
+    <test started-at="2023-01-09T19:55:23 EST" name="end to end test" finished-at="2023-01-09T19:55:28 EST" duration-ms="4333">
+      <class name="TestNG.ParameterizedRunner.HomePage">
+        <test-method signature="TestUrl(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestNG.ParameterizedRunner.HomePage@27ff5d15]" started-at="2023-01-09T19:55:23 EST" name="TestUrl" finished-at="2023-01-09T19:55:28 EST" duration-ms="4299" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.facebook.com/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mister motivation guy]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[pass]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUrl -->
+      </class> <!-- TestNG.ParameterizedRunner.HomePage -->
+    </test> <!-- end to end test -->
+  </suite> <!-- Suite1 -->
+</testng-results>
