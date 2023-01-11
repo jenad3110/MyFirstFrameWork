@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+<listeners>
+<!--    <listener class-name="TestNG.listenersTestIntestNG.TestListeners"></listener>-->
+</listeners>
+    <test name="regression Test" >
+        <classes>
+            <class name="OtherTests.TestNG.AnnotationInTestNG.HomePage" />
+        </classes>
+    </test>
+
+
+    <test name="sanity Test" >
+        <classes>
+            <class name="OtherTests.TestNG.AnnotationInTestNG.LoginPage" />
+        </classes>
+    </test>
+</suite>

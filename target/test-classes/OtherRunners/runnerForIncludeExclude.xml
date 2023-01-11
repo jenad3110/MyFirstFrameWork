@@ -1,0 +1,16 @@
+<suite name="Suite1" verbose="1" >
+<test name="end to end test" >
+
+    <classes>
+
+        <class name="OtherTests.TestNG.AnnotationInTestNG.HomePage" >
+            <methods>
+                <include name="ClickOnMenu"/>
+                <include name="ClickOnChatLogo"/>
+            </methods>
+        </class>
+<!--        <class name="TestNG.AnnotationInTestNG.LoginPage" />-->
+    </classes>
+</test>
+
+</suite>
