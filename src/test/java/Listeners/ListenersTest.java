@@ -7,7 +7,7 @@ import org.testng.ITestResult;
 
 import java.lang.reflect.Method;
 
-public class ListenersTest extends CommonAPI implements ITestListener {
+public class ListenersTest  implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
 

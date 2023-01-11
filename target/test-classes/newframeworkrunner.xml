@@ -5,7 +5,7 @@
     <listeners>
         <listener class-name="Listeners.ListenersTest"></listener>
     </listeners>
-    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="browser" value="firefox"></parameter>
     <test name="end to end test" >
         <classes>
            <class name="NewFrameWorkTest.HomePage"></class>

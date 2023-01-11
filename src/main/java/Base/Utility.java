@@ -1,7 +1,6 @@
 package Base;
 
 import org.apache.commons.io.FileUtils;
-import org.asynchttpclient.util.HttpConstants;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,6 @@ import org.testng.ITestResult;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,8 +15,6 @@ import java.util.Properties;
 
 public class Utility {
 
-    static int number=0;
-    int sum=0;
     WebDriver driver;
 
     public static String currentDir = System.getProperty("user.dir");

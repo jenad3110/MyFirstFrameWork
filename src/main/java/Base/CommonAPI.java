@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -28,6 +29,12 @@ public class CommonAPI extends Utility {
         if(browser.equalsIgnoreCase("chrome")) {
         WebDriverManager.chromedriver().setup();
         driver =new ChromeDriver();}
+        else if (browser.equalsIgnoreCase("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+        driver= new FirefoxDriver();}
+
+
+
 
         driver.get(Url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(duration)));
