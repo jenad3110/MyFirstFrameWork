@@ -55,47 +55,47 @@ public class Utility {
 
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "\\screenshots1\\" + screenshotName + " " + df.format(date) + ".jpeg"));
+            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "\\screenshots\\" + screenshotName + " " + df.format(date) + ".jpeg"));
             // LOG.info("Screenshot captured");
         } catch (Exception e) {
-            String path = currentDir + "/screenshotsFailedTests/" + screenshotName + " " + df.format(date) + ".jpeg";
+            String path = currentDir + "/screenshots/" + screenshotName + " " + df.format(date) + ".jpeg";
             // LOG.info("Exception while taking screenshot " + e.getMessage());
         }
     }
 
+    public void takePicture(String name) {
 
-    public void afterEachTestMethod(ITestResult result) {
+        DateFormat df = new SimpleDateFormat("MMddyyyyHHmma");
+        Date date = new Date();
+        df.format(date);
+
+        if(takeScreenshot2.equalsIgnoreCase("true")){
+            File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            try {
+                FileUtils.copyFile(file, new File(System.getProperty("user.dir") +"\\screenshotsPassedtests\\ "+ name + " " + df.format(date) + ".jpeg"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }}
+
+
+
+    public void screenShotAfterEachTestMethod(ITestResult result) {
         if (takeScreenshot.equalsIgnoreCase("true"))
             if (result.getStatus() == ITestResult.FAILURE) {
                 takeScreenshot(result.getName());
             }
+        else if (result.getStatus() == ITestResult.SUCCESS) {
+                takePicture(result.getName());}
+
+
 
     }
 
 
-    public void takePicture(String name) {
 
-        if(takeScreenshot2.equalsIgnoreCase("true")){
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(file, new File("screenshots/screenshot "+name+".png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-    }}
 
-    /*
 
-    public void captureScreenshot() {
-
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(file, new File("screenshots/screenshot "+sum+".png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-    */
 }

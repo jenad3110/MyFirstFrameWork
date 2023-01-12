@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="Listeners.ListenersTest"></listener>
     </listeners>
-    <parameter name="browser" value="firefox"></parameter>
+    <parameter name="browser" value="chrom"></parameter>
     <test name="end to end test" >
         <classes>
            <class name="NewFrameWorkTest.HomePage"></class>

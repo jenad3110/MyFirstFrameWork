@@ -5,7 +5,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.lang.reflect.Method;
 
 public class ListenersTest  implements ITestListener {
     @Override
@@ -16,7 +15,7 @@ public class ListenersTest  implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult iTestResult)
     {System.out.println("Test Passed "+iTestResult.getName());
-    System.out.println(iTestResult.getMethod());
+        System.out.println(iTestResult.getMethod());
 
     }
 
