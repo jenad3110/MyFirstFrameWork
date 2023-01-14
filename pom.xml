@@ -85,7 +85,7 @@
                 <version>2.22.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>C:\Users\sron4\eclipse-workspace\OurOwnFrameWork\src\test\resources\runnerForParameters.xml</suiteXmlFile>
+                        <suiteXmlFile>C:\Users\sron4\eclipse-workspace\OurOwnFrameWork\src\test\resources\newframeworkrunner.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
