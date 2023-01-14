@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,38 +16,28 @@ import java.util.Properties;
 
 public class Utility {
 
-    WebDriver driver;
-
     public static String currentDir = System.getProperty("user.dir");
-    public static Properties loadProperties(){
+    WebDriver driver;
+    Properties prop = loadProperties();
+    String Url = prop.getProperty("URL", "");
+    String UserName = prop.getProperty("UserName", "standard_user");
+    String Password = prop.getProperty("Password", "secret_sauce");
+    String maximizeBrowser = prop.getProperty("maximize.browser", "true");
+    String takeScreenshot = prop.getProperty("take.screenshot", "false");
+    String takeScreenshot2 = prop.getProperty("take.screenshot2", "false");
+    String duration = prop.getProperty("implicit.wait", "10");
+
+    public static Properties loadProperties() {
 
         Properties properties = new Properties();
         try {
             FileInputStream fis = new FileInputStream(currentDir + "/config.properties");
             properties.load(fis);
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return properties;
     }
-
-    Properties prop = loadProperties();
-
-    String Url = prop.getProperty("URL","");
-
-    String UserName = prop.getProperty("UserName", "standard_user");
-
-    String Password = prop.getProperty("Password", "secret_sauce");
-
-    String maximizeBrowser = prop.getProperty("maximize.browser", "true");
-
-    String takeScreenshot = prop.getProperty("take.screenshot", "false");
-
-    String takeScreenshot2 = prop.getProperty("take.screenshot2", "false");
-
-    String duration = prop.getProperty("implicit.wait", "10");
-
-
 
     public void takeScreenshot(String screenshotName) {
         DateFormat df = new SimpleDateFormat("MMddyyyyHHmma");
@@ -69,33 +60,28 @@ public class Utility {
         Date date = new Date();
         df.format(date);
 
-        if(takeScreenshot2.equalsIgnoreCase("true")){
+        if (takeScreenshot2.equalsIgnoreCase("true")) {
             File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             try {
-                FileUtils.copyFile(file, new File(System.getProperty("user.dir") +"\\screenshotsPassedtests\\ "+ name + " " + df.format(date) + ".jpeg"));
+                FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "\\screenshotsPassedtests\\ " + name + " " + df.format(date) + ".jpeg"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-        }}
-
+        }
+    }
 
 
     public void screenShotAfterEachTestMethod(ITestResult result) {
         if (takeScreenshot.equalsIgnoreCase("true"))
             if (result.getStatus() == ITestResult.FAILURE) {
                 takeScreenshot(result.getName());
+            } else if (result.getStatus() == ITestResult.SUCCESS) {
+                takePicture(result.getName());
             }
-        else if (result.getStatus() == ITestResult.SUCCESS) {
-                takePicture(result.getName());}
-
 
 
     }
-
-
-
-
 
 
 }

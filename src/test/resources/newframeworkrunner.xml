@@ -1,19 +1,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Suite1" verbose="1" >
-<!--    <listeners>-->
-<!--        <listener class-name="Listeners.ListenersTest"></listener>-->
-<!--    </listeners>-->
+<suite name="Suite1" verbose="1">
+    <!--    <listeners>-->
+    <!--        <listener class-name="Listeners.ListenersTest"></listener>-->
+    <!--    </listeners>-->
     <parameter name="browser" value="chrom"></parameter>
-    <test name="end to end test" >
+    <test name="end to end test">
         <classes>
-           <class name="NewFrameWorkTest.HomePage">
-               <methods>
-                   <include name="backPack"></include>
-               </methods>
-           </class>
+            <class name="NewFrameWorkTest.HomePage">
+                <methods>
+                    <include name="backPack"></include>
+                </methods>
+            </class>
 
         </classes>
-        </test>
+    </test>
 
 
 </suite>

@@ -72,13 +72,13 @@ public class WebListener implements WebDriverEventListener {
 
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
-        System.out.println("Element ["+by+"]  Found");
+        System.out.println("Element [" + by + "]  Found");
 
     }
 
     @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
-        System.out.println("Element ["+by+"]  Selected");
+        System.out.println("Element [" + by + "]  Selected");
     }
 
     @Override
