@@ -12,7 +12,7 @@ public class HomePage extends CommonAPI {
 
     @Test
     public void firstTest() {
-        getDriver().findElement(By.id("hahaha")).click();
+        getDriver().findElement(By.id("this is a failed element ")).click();
         System.out.println("first test");
 
     }
@@ -34,7 +34,7 @@ public class HomePage extends CommonAPI {
     }
 
 
-    @Test(enabled = false)
+    @Test
     public void skippedTest() {
 
         int a = 5, b = 6;

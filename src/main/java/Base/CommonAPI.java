@@ -23,14 +23,18 @@ public class CommonAPI extends Utility {
         return driver;
     }
 
-    @Parameters({"browser"})
+    @Parameters({"browser", "url"})
     @BeforeMethod
-    public void SetUp(String browser) {
-
+    public void SetUp(String browser, String url) {
 
         setBrowser(browser);
+        if (setUrl.equalsIgnoreCase("true")) {
+            driver.get(Url);
+        } else if (!(setUrl.equalsIgnoreCase("true"))) {
+            driver.get(url);
+        }
+
         setWebListener();
-        driver.get(Url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(duration)));
         if (maximizeBrowser.equalsIgnoreCase("true")) {
             driver.manage().window().maximize();
@@ -41,17 +45,16 @@ public class CommonAPI extends Utility {
 
     }
 
+
     public void setBrowser(String browser) {
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome") ||
+                !(browser.equalsIgnoreCase("firefox"))) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
         }
 
     }
@@ -74,25 +77,12 @@ public class CommonAPI extends Utility {
 
     @AfterMethod
     public void tearDown(ITestResult result) {
-        screenShotAfterEachTestMethod(result);
+        ScreenShot(result);
         driver.quit();
     }
 
 
-//    @BeforeSuite
-//
-//    public void BeforeSuite() {
-//
-//        System.out.println("I execute before suite");
-//
-//    }
-//
-//    @AfterSuite
-//    public void AfterSuite() {
-//
-//        System.out.println("I execute after suite");
-//
-//    }
+
 
 
 }

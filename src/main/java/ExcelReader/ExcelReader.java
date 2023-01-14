@@ -77,19 +77,19 @@ public class ExcelReader {
 
 
     // Method to use to read from excel
-    public void ReadFromExcel() {
-
-        //element for search bar or similar
-
-        ExcelReader excelReader = new ExcelReader(Utility.currentDir + "/data/TestData.xlsx");
-        List<String> items = excelReader.getEntireColumnForGivenHeader("Sheet1", "item");
-
-        for (String item : items) {
-
-        }
-
-
-    }
+//    public void ReadFromExcel() {
+//
+//        //element for search bar or similar
+//
+//        ExcelReader excelReader = new ExcelReader(Utility.currentDir + "/data/TestData.xlsx");
+//        List<String> items = excelReader.getEntireColumnForGivenHeader("Sheet1", "item");
+//
+//        for (String item : items) {
+//
+//        }
+//
+//
+//    }
 
 
 

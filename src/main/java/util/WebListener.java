@@ -5,7 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
-import org.openqa.selenium.support.events.WebDriverListener;
+
 
 public class WebListener implements WebDriverEventListener {
 
@@ -31,6 +31,7 @@ public class WebListener implements WebDriverEventListener {
 
     @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
+        System.out.println("navigating to this url "+ url);
 
     }
 
@@ -72,13 +73,13 @@ public class WebListener implements WebDriverEventListener {
 
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
-        System.out.println("Element ["+by+"]  Found");
+        System.out.println("Element [" + by + "]  Found");
 
     }
 
     @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
-        System.out.println("Element ["+by+"]  Selected");
+        System.out.println("Element [" + by + "]  Selected");
     }
 
     @Override
