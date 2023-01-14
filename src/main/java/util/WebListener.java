@@ -26,10 +26,9 @@ public class WebListener implements WebDriverEventListener {
 
     @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
-<<<<<<< HEAD
+
         System.out.println("Before Navigating to "+url+"'");
-=======
->>>>>>> origin/master
+
 
     }
 
@@ -40,11 +39,9 @@ public class WebListener implements WebDriverEventListener {
 
     @Override
     public void beforeNavigateBack(WebDriver driver) {
-<<<<<<< HEAD
-        System.out.println("Navigating back");
-=======
 
->>>>>>> origin/master
+        System.out.println("Navigating back");
+
     }
 
     @Override
@@ -74,10 +71,9 @@ public class WebListener implements WebDriverEventListener {
 
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
-<<<<<<< HEAD
+
         System.out.println("clicked on findElement "+by);
-=======
->>>>>>> origin/master
+
 
     }
 
