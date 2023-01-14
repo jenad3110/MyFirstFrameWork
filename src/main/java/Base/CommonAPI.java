@@ -27,8 +27,9 @@ public class CommonAPI extends Utility {
     @BeforeMethod
     public void SetUp(String browser) {
 
-        setWebListener();
+
         setBrowser(browser);
+        setWebListener();
         driver.get(Url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(duration)));
         if (maximizeBrowser.equalsIgnoreCase("true")) {
@@ -56,6 +57,7 @@ public class CommonAPI extends Utility {
     }
 
     public void setWebListener() {
+
         e_driver = new EventFiringWebDriver(driver);
         webListener = new WebListener();
         e_driver.register(webListener);
