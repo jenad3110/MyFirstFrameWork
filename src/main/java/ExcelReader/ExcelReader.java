@@ -21,11 +21,11 @@ public class ExcelReader {
     XSSFCell cell;
     String path;
 
-    public ExcelReader(String path){
+    public ExcelReader(String path) {
         this.path = path;
     }
 
-    public String getDataFromCell(String sheet, int rowNum, int colNum){
+    public String getDataFromCell(String sheet, int rowNum, int colNum) {
         try {
             FileInputStream excelFile = new FileInputStream(path);
             excelWBook = new XSSFWorkbook(excelFile);
@@ -34,20 +34,20 @@ public class ExcelReader {
             String cellValue = cell.getStringCellValue();
             excelFile.close();
             return cellValue;
-        }catch (Exception e){
+        } catch (Exception e) {
             LOG.info("no file found");
             return "";
         }
     }
 
-    public List<String> getEntireColumnData(String sheet, int rowStart, int colNum){
+    public List<String> getEntireColumnData(String sheet, int rowStart, int colNum) {
         List<String> columnData = new ArrayList<>();
         try {
             File file = new File(path);
             FileInputStream excelFile = new FileInputStream(file);
             excelWBook = new XSSFWorkbook(excelFile);
             excelWSheet = excelWBook.getSheet(sheet);
-            for (int i = rowStart; i <= excelWSheet.getLastRowNum(); i++){
+            for (int i = rowStart; i <= excelWSheet.getLastRowNum(); i++) {
                 columnData.add(excelWSheet.getRow(i).getCell(colNum).getStringCellValue());
             }
 //            int i = rowStart;
@@ -56,17 +56,17 @@ public class ExcelReader {
 //                i++;
 //            }
             excelFile.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             LOG.info("no data found");
         }
         return columnData;
     }
 
-    public List<String> getEntireColumnForGivenHeader(String sheet, String headerName){
+    public List<String> getEntireColumnForGivenHeader(String sheet, String headerName) {
         int i = 0;
-        while (getDataFromCell(sheet, 0, i) != null){
-            if(getDataFromCell(sheet, 0, i).equalsIgnoreCase(headerName)){
+        while (getDataFromCell(sheet, 0, i) != null) {
+            if (getDataFromCell(sheet, 0, i).equalsIgnoreCase(headerName)) {
                 getEntireColumnData(sheet, 1, i);
                 break;
             }
@@ -76,21 +76,17 @@ public class ExcelReader {
     }
 
 
-
-
-
     // Method to use to read from excel
-    public  void ReadFromExcel(){
+    public void ReadFromExcel() {
 
         //element for search bar or similar
 
-        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"/data/TestData.xlsx");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir + "/data/TestData.xlsx");
         List<String> items = excelReader.getEntireColumnForGivenHeader("Sheet1", "item");
 
-        for (String item: items) {
+        for (String item : items) {
 
         }
-
 
 
     }
@@ -119,8 +115,6 @@ public class ExcelReader {
         return value;
     }
 */
-
-
 
 
 }
