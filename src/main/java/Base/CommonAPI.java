@@ -28,13 +28,14 @@ public class CommonAPI extends Utility {
     public void SetUp(String browser, String url) {
 
         setBrowser(browser);
+        setWebListener();
         if (setUrl.equalsIgnoreCase("true")) {
             driver.get(Url);
         } else if (!(setUrl.equalsIgnoreCase("true"))) {
             driver.get(url);
         }
 
-        setWebListener();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(duration)));
         if (maximizeBrowser.equalsIgnoreCase("true")) {
             driver.manage().window().maximize();
@@ -48,8 +49,7 @@ public class CommonAPI extends Utility {
 
     public void setBrowser(String browser) {
 
-        if (browser.equalsIgnoreCase("chrome") ||
-                !(browser.equalsIgnoreCase("firefox"))) {
+        if (browser.equalsIgnoreCase("chrome") || !(browser.equalsIgnoreCase("firefox"))) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
@@ -80,9 +80,6 @@ public class CommonAPI extends Utility {
         ScreenShot(result);
         driver.quit();
     }
-
-
-
 
 
 }
