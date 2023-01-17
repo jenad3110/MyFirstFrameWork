@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" thread-count="1" parallel="methods">
+    <!--    <listeners>-->
+    <!--        <listener class-name="Listeners.ListenersTest"></listener>-->
+    <!--    </listeners>-->
+    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="url" value="https://www.facebook.com/"></parameter>
+    <test  name="end to end test">
+        <classes>
+            <class name="NewFrameWorkTest.HomePage">
+                <methods>
+                    <include name="backPack"></include>
+                    <include name="firstTest"></include>
+                    <include name="skippedTest"></include>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+
+</suite>
